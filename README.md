@@ -31,3 +31,34 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### install Pinia
+
+```
+npm install pinia
+```
+
+### config in ts
+
+```
+
+import { createPinia } from "pinia";
+import { createApp } from "vue";
+import App from "./App.vue";
+
+createApp(App).use(createPinia()).mount("#app");
+```
+
+### presist data in pinia using plugin
+
+```
+npm i pinia-plugin-persistedstate
+
+config-persistedstate
+
+import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
+```
