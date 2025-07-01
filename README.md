@@ -62,3 +62,9 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
 ```
+
+### install of Router
+
+```
+npm i vue-router
+```
