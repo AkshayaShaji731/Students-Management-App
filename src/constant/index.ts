@@ -2,17 +2,17 @@ import type { Route } from "@/type/Route";
 
 export const ROUTE_LIST: Route[] = [
   {
-    path: "",
+    path: "/",
     icon: "home",
     title: "Home",
   },
   {
-    path: "",
+    path: "/class",
     icon: "location_city",
     title: "Classes",
   },
   {
-    path: "",
+    path: "/students",
     icon: "perm_identity",
     title: "Students",
   },

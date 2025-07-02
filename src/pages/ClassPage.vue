@@ -1,5 +1,11 @@
-<template>class page</template>
+<template>
+  <section class="class-con">Class page</section>
+</template>
 
-<script lang="ts" setup></script>
+<script></script>
 
-<style scoped></style>
+<style scoped>
+.class-con {
+  margin-left: 100px;
+}
+</style>
