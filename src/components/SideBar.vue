@@ -1,32 +1,32 @@
 <template>
-  <ul class="sidebar">
-    <li v-for="route in ROUTE_LIST" :key="route.icon">
-      <RouterLink
-        :to="`${route.path}`"
-        class="d-flex flex-column justify-center align-center g-2 pa-4"
-      >
-        <i class="material-icons">{{ route.icon }}</i>
-        <p class="text-white text-subtitle-1 font-weight-bold">
-          {{ route.title }}
-        </p>
-      </RouterLink>
-    </li>
-  </ul>
+  <v-layout>
+    <v-navigation-drawer permanent style="width: auto">
+      <v-list v-for="route in ROUTE_LIST" key="route">
+        <RouterLink
+          :to="route.path"
+          class="d-flex flex-column justify-center align-center text-h6 text-white"
+        >
+          <v-icon>{{ route.icon }}</v-icon>
+          <v-list-item
+            :title="`${route.title}`"
+            class="font-weight-bold"
+          ></v-list-item>
+        </RouterLink>
+      </v-list>
+    </v-navigation-drawer>
+  </v-layout>
 </template>
 
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
 import { ROUTE_LIST } from "@/constant";
+import { VIcon } from "vuetify/components";
 </script>
 
 <style scoped>
-.sidebar {
+.v-navigation-drawer:deep() {
   background-color: #490648;
-  position: fixed;
-  height: 100vh;
-}
-
-.material-icons {
   color: #fff;
+  width: auto;
 }
 </style>

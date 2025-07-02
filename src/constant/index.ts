@@ -3,17 +3,17 @@ import type { Route } from "@/type/Route";
 export const ROUTE_LIST: Route[] = [
   {
     path: "/",
-    icon: "home",
+    icon: "mdi-home",
     title: "Home",
   },
   {
     path: "/class",
-    icon: "location_city",
+    icon: "mdi-city",
     title: "Classes",
   },
   {
     path: "/students",
-    icon: "perm_identity",
+    icon: "mdi-account",
     title: "Students",
   },
 ];
