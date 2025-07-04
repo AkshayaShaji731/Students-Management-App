@@ -13,13 +13,14 @@
 
 <script setup lang="ts">
 import { onMounted } from "vue";
+
 import { useStudentStore } from "@/store/studentStore";
 
 const studentStore = useStudentStore();
 
 onMounted(async () => {
-  const details = await studentStore.fetchStudetDetails();
-  studentStore.getStudentDetails(details);
+  const details = await studentStore.fetchStudentDetails();
+  studentStore.updateStudents(details);
 });
 </script>
 

@@ -2,18 +2,19 @@ import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import type { Students } from "@/types/students";
+import { API_URL } from "@/constant";
 
 export const useStudentStore = defineStore(
   "studentStore",
   () => {
     const studentsDetails = ref<Students[]>([]);
 
-    const getStudentDetails = (details: Students[]) =>
+    const updateStudents = (details: Students[]) =>
       (studentsDetails.value = details);
 
-    const fetchStudetDetails = async () => {
+    const fetchStudentDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/students");
+        const response = await axios.get(API_URL);
         const data = response.data;
 
         return data;
@@ -22,7 +23,7 @@ export const useStudentStore = defineStore(
       }
     };
 
-    return { studentsDetails, fetchStudetDetails, getStudentDetails };
+    return { studentsDetails, fetchStudentDetails, updateStudents };
   },
   {
     persist: true,
