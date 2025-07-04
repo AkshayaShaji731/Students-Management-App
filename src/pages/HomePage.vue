@@ -1,11 +1,11 @@
 <template>
-  <section class="home-con">Home Page</section>
+  <section class="home-page-container">Home Page</section>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped>
-.home-con {
+.home-page-container {
   margin-left: 100px;
 }
 </style>
