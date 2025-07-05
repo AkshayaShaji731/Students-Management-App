@@ -1,11 +1,11 @@
 <template>
-  <h1 class="Add-student-heading">Add Students</h1>
+  <h1 class="add-student-heading">Add Students</h1>
 </template>
 
 <script lang="ts" setup></script>
 
 <style scoped>
-.Add-student-heading {
+.add-student-heading {
   background-color: #341539;
   color: #fff;
   display: flex;
