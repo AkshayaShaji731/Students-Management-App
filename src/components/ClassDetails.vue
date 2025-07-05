@@ -10,11 +10,9 @@
     </v-tabs-window-item>
   </v-tabs-window>
 </template>
-<script setup>
-import { ref } from "vue";
 
-const tab = ref("class A");
-</script>
+<script setup></script>
+
 <style scoped>
 .v-card :deep() {
   background-color: #663399;
