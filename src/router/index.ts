@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import homepage from "@/pages/HomePage.vue";
-import classPage from "@/pages/ClassPage.vue";
-import studentsPage from "@/pages/StudentsPage.vue";
-import addStudentPage from "@/pages/AddStudentPage.vue";
+import Homepage from "@/pages/HomePage.vue";
+import ClassPage from "@/pages/ClassPage.vue";
+import StudentsPage from "@/pages/StudentsPage.vue";
+import AddStudentPage from "@/pages/AddStudentPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,22 +11,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: homepage,
+      component: Homepage,
     },
     {
       path: "/class",
       name: "class",
-      component: classPage,
+      component: ClassPage,
     },
     {
       path: "/students",
       name: "students",
-      component: studentsPage,
+      component: StudentsPage,
     },
     {
       path: "/add-student",
       name: "add-student",
-      component: addStudentPage,
+      component: AddStudentPage,
     },
   ],
 });
