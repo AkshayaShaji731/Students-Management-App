@@ -68,3 +68,31 @@ pinia.use(piniaPluginPersistedstate)
 ```
 npm i vue-router
 ```
+
+### To add vuetify icon install and config
+
+```
+npm install @mdi/font -D
+```
+
+```
+    import '@mdi/font/css/materialdesignicons.css'(main.js)
+
+
+    import { createVuetify } from 'vuetify'
+    import * as components from 'vuetify/components'
+    import * as directives from 'vuetify/directives'
+    import { aliases, mdi } from 'vuetify/iconsets/mdi' // Or mdi-svg for SVG icons
+
+    export default createVuetify({
+      components,
+      directives,
+      icons: {
+        defaultSet: 'mdi',
+        aliases,
+        sets: {
+          mdi,
+        },
+      },
+    })
+```

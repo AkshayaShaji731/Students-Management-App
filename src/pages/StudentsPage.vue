@@ -1,5 +1,11 @@
-<template>Students Page</template>
+<template>
+  <section class="student-page-container">Student Page</section>
+</template>
 
 <script setup lang="ts"></script>
 
-<style></style>
+<style scoped>
+.student-page-container {
+  margin-left: 100px;
+}
+</style>
