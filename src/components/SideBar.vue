@@ -8,7 +8,7 @@
         >
           <v-icon>{{ route.icon }}</v-icon>
           <v-list-item
-            :title="`${route.title}`"
+            :title="route.title"
             class="font-weight-bold"
           ></v-list-item>
         </RouterLink>
