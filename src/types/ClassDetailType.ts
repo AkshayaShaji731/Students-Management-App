@@ -1,4 +1,4 @@
-export interface Details {
+export interface ClassDetails {
   classId: string;
   className: string;
   teacherName: string;

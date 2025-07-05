@@ -1,13 +1,11 @@
 <template>
-  <v-tabs-window v-model="tab">
-    <v-tabs-window-item v-for="tab in tabNames" :key="tab" :value="tab">
+  <v-tabs-window>
+    <v-tabs-window-item>
       <v-card>
-        <v-card-text>Class ID : {{ classDetails.classId }}</v-card-text>
-        <v-card-text>Class Name : {{ classDetails.className }}</v-card-text>
-        <v-card-text>Teacher Name : {{ classDetails.teacherName }}</v-card-text>
-        <v-card-text
-          >Total Students : {{ classDetails.totalStudents }}</v-card-text
-        >
+        <v-card-text>Class ID : c1</v-card-text>
+        <v-card-text>Class Name : class A</v-card-text>
+        <v-card-text>Teacher Name : Mary</v-card-text>
+        <v-card-text>Total Students : 4</v-card-text>
       </v-card>
     </v-tabs-window-item>
   </v-tabs-window>
@@ -16,13 +14,6 @@
 import { ref } from "vue";
 
 const tab = ref("class A");
-const tabNames = ["class A", "Class B", "Class C"];
-const classDetails = {
-  classId: "c1",
-  className: "class A",
-  teacherName: "Mary",
-  totalStudents: 4,
-};
 </script>
 <style scoped>
 .v-card :deep() {
