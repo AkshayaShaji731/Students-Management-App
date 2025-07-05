@@ -1,4 +1,4 @@
-import type { Route } from "@/type/Route";
+import type { Route } from "@/types/Route";
 
 export const ROUTE_LIST: Route[] = [
   {
@@ -17,3 +17,4 @@ export const ROUTE_LIST: Route[] = [
     title: "Students",
   },
 ];
+export const API_URL = "http://localhost:3000/students";
