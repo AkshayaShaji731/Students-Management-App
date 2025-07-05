@@ -1,11 +1,11 @@
 <template>
   <section class="student-page-container">
-    <div class="student-heading">
+    <div class="student-page-heading">
       <h2 class="d-flex align-center justify-center font-weight-bold">
         STUDENT DETAILS
       </h2>
     </div>
-    <div class="student-con">
+    <div class="student-page-content">
       <!-- TODO:Add student card component -->
     </div>
   </section>
@@ -29,13 +29,13 @@ onMounted(async () => {
   margin-left: 100px;
 }
 
-.student-heading {
+.student-page-heading {
   background-color: #341539;
   color: #fff;
   padding: 50px 10px 10px;
 }
 
-.student-con {
+.student-page-content {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   background-color: #341539;
@@ -43,7 +43,7 @@ onMounted(async () => {
 }
 
 @media screen and (min-width: 1024px) {
-  .student-con {
+  .student-page-content {
     grid-template-columns: repeat(2, 1fr);
   }
 }
