@@ -6,7 +6,11 @@
       </h2>
     </div>
     <div class="student-page-content">
-      <!-- TODO:Add student card component -->
+      <StudentCard
+        v-for="studentDetail in studentStore.studentsDetails"
+        :key="studentDetail.id"
+        :student-details="studentDetail"
+      />
     </div>
   </section>
 </template>
@@ -15,6 +19,7 @@
 import { onMounted } from "vue";
 
 import { useStudentStore } from "@/store/studentStore";
+import StudentCard from "@/components/StudentCard.vue";
 
 const studentStore = useStudentStore();
 
