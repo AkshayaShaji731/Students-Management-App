@@ -11,7 +11,9 @@
   </v-tabs-window>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+// TODO:Add props from class page
+</script>
 
 <style scoped>
 .v-card :deep() {
