@@ -1,8 +1,8 @@
-import type { Marks } from "./Marks";
+import type { Mark } from "./Marks";
 
-export interface Students {
+export interface Student {
   name: string;
   id: string;
-  marks: Marks[];
+  marks: Mark[];
   classId: string;
 }

@@ -1,16 +1,16 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import type { Students } from "@/types/students";
+import type { Student } from "@/types/students";
 import { API_URL } from "@/constant";
 
 export const useStudentStore = defineStore(
   "studentStore",
   () => {
-    const studentsDetails = ref<Students[]>([]);
+    const students = ref<Student[]>([]);
 
-    const updateStudents = (details: Students[]) =>
-      (studentsDetails.value = details);
+    const updateStudents = (updatedStudents: Student[]) =>
+      (students.value = updatedStudents);
 
     const fetchStudentDetails = async () => {
       try {
@@ -23,7 +23,7 @@ export const useStudentStore = defineStore(
       }
     };
 
-    return { studentsDetails, fetchStudentDetails, updateStudents };
+    return { students, fetchStudentDetails, updateStudents };
   },
   {
     persist: true,

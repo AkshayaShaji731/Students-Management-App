@@ -1,5 +1,8 @@
 <template>
-  <v-card class="font-weight-bold text-body-1 d-flex flex-column ma-4 pa-4">
+  <v-card
+    class="font-weight-bold text-body-1 d-flex flex-column ma-4 pa-4"
+    v-if="props.studentDetails"
+  >
     <v-card-text>Student Name :{{ props.studentDetails.name }}</v-card-text>
     <v-card-text>Student ID :{{ props.studentDetails.id }}</v-card-text>
     <v-card-text>Class ID:{{ props.studentDetails.classId }} </v-card-text>
@@ -14,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="mark in props.studentDetails.marks" :key="mark">
+        <tr v-for="mark in props.studentDetails.marks" :key="mark.mark">
           <td>{{ mark.subject }}</td>
           <td>{{ mark.mark }}</td>
         </tr>
@@ -24,12 +27,13 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  studentDetails: {
-    required: true,
-    type: Object,
-  },
-});
+import type { Student } from "@/types/students";
+
+interface Props {
+  studentDetails?: Student;
+}
+
+const props = withDefaults(defineProps<Props>(), {});
 </script>
 
 <style scoped>

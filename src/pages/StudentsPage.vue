@@ -7,9 +7,9 @@
     </div>
     <div class="student-page-content">
       <StudentCard
-        v-for="studentDetail in studentStore.studentsDetails"
-        :key="studentDetail.id"
-        :student-details="studentDetail"
+        v-for="student in studentStore.students"
+        :key="student.id"
+        :student-details="student"
       />
     </div>
   </section>
@@ -24,8 +24,8 @@ import StudentCard from "@/components/StudentCard.vue";
 const studentStore = useStudentStore();
 
 onMounted(async () => {
-  const details = await studentStore.fetchStudentDetails();
-  studentStore.updateStudents(details);
+  const students = await studentStore.fetchStudentDetails();
+  studentStore.updateStudents(students);
 });
 </script>
 
