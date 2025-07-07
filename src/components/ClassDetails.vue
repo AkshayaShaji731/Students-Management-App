@@ -1,15 +1,15 @@
 <template>
   <v-tabs-window>
     <v-tabs-window-item
-      v-for="className in props.tabValue.ClassNames"
-      :key="className"
-      :value="className"
+      v-for="classes in props.tabValue"
+      :key="classes.className"
+      :value="classes"
     >
       <v-card>
-        <v-card-text>Class ID : c1</v-card-text>
-        <v-card-text>Class Name : class A</v-card-text>
-        <v-card-text>Teacher Name : Mary</v-card-text>
-        <v-card-text>Total Students : 4</v-card-text>
+        <v-card-text>Class ID : {{ classes.classId }}</v-card-text>
+        <v-card-text>Class Name : {{ classes.className }}</v-card-text>
+        <v-card-text>Teacher Name : {{ classes.teacherName }}</v-card-text>
+        <v-card-text>Total Students : {{ classes.totalStudents }}</v-card-text>
       </v-card>
     </v-tabs-window-item>
   </v-tabs-window>
@@ -27,6 +27,8 @@ const props = defineProps({
 <style scoped>
 .v-card :deep() {
   background-color: #663399;
+  margin-block: 50px;
+  padding: 50px;
 }
 
 .v-card-text :deep() {
