@@ -1,0 +1,112 @@
+{
+  "students": [
+    {
+      "name": "Ravi",
+      "id": "101",
+      "marks": [
+        { "subject": "English", "mark": 25 },
+        { "subject": "Maths", "mark": 48 },
+        { "subject": "Physics", "mark": 40 },
+        { "subject": "Chemistry", "mark": 30 },
+        { "subject": "Computer", "mark": 20 }
+      ],
+      "classId": "c1"
+    },
+    {
+      "name": "Aju",
+      "id": "102",
+      "marks": [
+        { "subject": "English", "mark": 35 },
+        { "subject": "Maths", "mark": 38 },
+        { "subject": "Physics", "mark": 33 },
+        { "subject": "Chemistry", "mark": 34 },
+        { "subject": "Computer", "mark": 30 }
+      ],
+      "classId": "c1"
+    },
+    {
+      "name": "Mini SS",
+      "id": "103",
+      "marks": [
+        { "subject": "English", "mark": 12 },
+        { "subject": "Maths", "mark": 49 },
+        { "subject": "Physics", "mark": 18 },
+        { "subject": "Chemistry", "mark": 30 },
+        { "subject": "Computer", "mark": 40 }
+      ],
+      "classId": "c1"
+    },
+    {
+      "name": "Binu",
+      "id": "104",
+      "marks": [
+        { "subject": "English", "mark": 49 },
+        { "subject": "Maths", "mark": 49 },
+        { "subject": "Physics", "mark": 47 },
+        { "subject": "Chemistry", "mark": 46 },
+        { "subject": "Computer", "mark": 50 }
+      ],
+      "classId": "c1"
+    },
+    {
+      "name": "Arun",
+      "id": "201",
+      "marks": [
+        { "subject": "English", "mark": 30 },
+        { "subject": "Maths", "mark": 42 },
+        { "subject": "Physics", "mark": 39 },
+        { "subject": "Chemistry", "mark": 28 },
+        { "subject": "Computer", "mark": 25 }
+      ],
+      "classId": "c2"
+    },
+    {
+      "name": "Deepa",
+      "id": "202",
+      "marks": [
+        { "subject": "English", "mark": 44 },
+        { "subject": "Maths", "mark": 50 },
+        { "subject": "Physics", "mark": 41 },
+        { "subject": "Chemistry", "mark": 45 },
+        { "subject": "Computer", "mark": 40 }
+      ],
+      "classId": "c2"
+    },
+    {
+      "name": "Kiran",
+      "id": "203",
+      "marks": [
+        { "subject": "English", "mark": 18 },
+        { "subject": "Maths", "mark": 35 },
+        { "subject": "Physics", "mark": 32 },
+        { "subject": "Chemistry", "mark": 20 },
+        { "subject": "Computer", "mark": 30 }
+      ],
+      "classId": "c2"
+    },
+    {
+      "name": "Sneha",
+      "id": "301",
+      "marks": [
+        { "subject": "English", "mark": 39 },
+        { "subject": "Maths", "mark": 46 },
+        { "subject": "Physics", "mark": 42 },
+        { "subject": "Chemistry", "mark": 37 },
+        { "subject": "Computer", "mark": 35 }
+      ],
+      "classId": "c3"
+    },
+    {
+      "name": "Vikram",
+      "id": "302",
+      "marks": [
+        { "subject": "English", "mark": 22 },
+        { "subject": "Maths", "mark": 28 },
+        { "subject": "Physics", "mark": 25 },
+        { "subject": "Chemistry", "mark": 26 },
+        { "subject": "Computer", "mark": 24 }
+      ],
+      "classId": "c3"
+    }
+  ]
+}

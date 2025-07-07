@@ -1,6 +1,10 @@
 <template>
   <v-tabs-window>
-    <v-tabs-window-item>
+    <v-tabs-window-item
+      v-for="className in props.tabValue.ClassNames"
+      :key="className"
+      :value="className"
+    >
       <v-card>
         <v-card-text>Class ID : c1</v-card-text>
         <v-card-text>Class Name : class A</v-card-text>
@@ -12,7 +16,12 @@
 </template>
 
 <script setup lang="ts">
-// TODO:Add props from class page
+const props = defineProps({
+  tabValue: {
+    required: true,
+    type: Object,
+  },
+});
 </script>
 
 <style scoped>
