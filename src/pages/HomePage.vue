@@ -1,5 +1,7 @@
 <template>
-  <section class="home-page-container">Home Page</section>
+  <section class="home-page-container">
+    <h3>Student Management App</h3>
+  </section>
 </template>
 
 <script setup lang="ts"></script>
