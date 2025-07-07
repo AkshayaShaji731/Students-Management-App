@@ -3,9 +3,9 @@
     class="font-weight-bold text-body-1 d-flex flex-column ma-4 pa-4"
     v-if="props.studentDetails"
   >
-    <v-card-text>Student Name :{{ props.studentDetails.name }}</v-card-text>
-    <v-card-text>Student ID :{{ props.studentDetails.id }}</v-card-text>
-    <v-card-text>Class ID:{{ props.studentDetails.classId }} </v-card-text>
+    <v-card-text>Student Name : {{ props.studentDetails.name }} </v-card-text>
+    <v-card-text>Student ID : {{ props.studentDetails.id }}</v-card-text>
+    <v-card-text>Class ID : {{ props.studentDetails.classId }} </v-card-text>
     <v-card-text class="d-flex justify-center align-center mb-5"
       >Marks</v-card-text
     >
