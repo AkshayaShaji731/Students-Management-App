@@ -22,7 +22,9 @@ interface Props {
   classes?: ClassDetails[];
 }
 
-const props = withDefaults(defineProps<Props>(), {});
+const props = withDefaults(defineProps<Props>(), {
+  classes: () => [],
+});
 </script>
 
 <style scoped>
