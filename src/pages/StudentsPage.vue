@@ -26,6 +26,8 @@ const studentStore = useStudentStore();
 onMounted(async () => {
   const students = await studentStore.fetchStudentDetails();
   studentStore.updateStudents(students);
+  const Classes = await studentStore.fetchClasses();
+  studentStore.updateClasses(Classes);
 });
 </script>
 
