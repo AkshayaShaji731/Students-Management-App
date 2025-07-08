@@ -18,7 +18,7 @@
 import type { ClassDetails } from "@/types/ClassDetailsType";
 
 interface Props {
-  classes?: ClassDetails;
+  classes: ClassDetails;
 }
 
 const props = withDefaults(defineProps<Props>(), {
