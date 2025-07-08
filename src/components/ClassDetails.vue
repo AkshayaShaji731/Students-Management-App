@@ -1,7 +1,7 @@
 <template>
   <v-tabs-window>
     <v-tabs-window-item
-      v-for="classes in props.tabValue"
+      v-for="classes in props.classes"
       :key="classes.className"
       :value="classes"
     >
@@ -16,12 +16,13 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  tabValue: {
-    required: true,
-    type: Object,
-  },
-});
+import type { ClassDetails } from "@/types/ClassDetailsType";
+
+interface Props {
+  classes?: ClassDetails[];
+}
+
+const props = withDefaults(defineProps<Props>(), {});
 </script>
 
 <style scoped>

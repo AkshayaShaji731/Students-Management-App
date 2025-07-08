@@ -3,7 +3,8 @@
     <v-card-title class="text-h5 font-weight-bold">Classes</v-card-title>
     <v-tabs>
       <v-tab
-        v-for="className in props.tabValue.classNames"
+        v-if="props.classes"
+        v-for="className in props.classes.className"
         :key="className"
         :text="className"
         :value="className"
@@ -14,12 +15,13 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  tabValue: {
-    required: true,
-    type: Object,
-  },
-});
+import type { ClassDetails } from "@/types/ClassDetailsType";
+
+interface Props {
+  classes?: ClassDetails;
+}
+
+const props = withDefaults(defineProps<Props>(), {});
 </script>
 
 <style scoped>

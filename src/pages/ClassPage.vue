@@ -10,7 +10,7 @@
           :value="className"
         ></v-tab>
       </v-tabs>
-      <ClassDetails :tab-value="classStore.classes" v-model="tab" />
+      <ClassDetails :classes="classStore.classes" v-model="tab" />
     </v-card>
   </section>
 </template>
@@ -18,11 +18,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-const tab = ref(null);
-
 import ClassDetails from "@/components/ClassDetails.vue";
 import { useStudentStore } from "@/store/studentStore";
 
+const tab = ref(null);
 const classStore = useStudentStore();
 
 onMounted(async () => {
