@@ -16,14 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ClassDetails } from "@/types/ClassDetailsType";
-
-interface Props {
-  classes: ClassDetails[];
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  classes: () => [],
+const props = defineProps({
+  classes: {
+    required: true,
+    type: Object,
+  },
 });
 </script>
 
