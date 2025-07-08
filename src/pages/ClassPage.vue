@@ -10,7 +10,7 @@
           :value="className"
         ></v-tab>
       </v-tabs>
-      <ClassDetails :classes="classStore.classes" v-model="tab" />
+      <ClassDetails v-model="tab" :classes="classStore.classes" />
     </v-card>
   </section>
 </template>

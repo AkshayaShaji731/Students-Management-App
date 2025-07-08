@@ -21,7 +21,14 @@ interface Props {
   classes?: ClassDetails;
 }
 
-const props = withDefaults(defineProps<Props>(), {});
+const props = withDefaults(defineProps<Props>(), {
+  classes: () => ({
+    classId: "",
+    className: "",
+    teacherName: "",
+    totalStudents: 0,
+  }),
+});
 </script>
 
 <style scoped>
