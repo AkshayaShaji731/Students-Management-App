@@ -18,8 +18,9 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-import ClassDetails from "@/components/ClassDetails.vue";
 import { useStudentStore } from "@/store/studentStore";
+
+import ClassDetails from "@/components/ClassDetails.vue";
 
 const tab = ref(null);
 const classStore = useStudentStore();
