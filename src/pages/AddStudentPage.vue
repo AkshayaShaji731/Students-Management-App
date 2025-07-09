@@ -1,8 +1,12 @@
 <template>
-  <h1 class="add-student-heading">Add Students</h1>
+  <h1 class="add-student-heading">
+    <add-student />
+  </h1>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import AddStudent from "@/components/AddStudent.vue";
+</script>
 
 <style scoped>
 .add-student-heading {
@@ -13,5 +17,6 @@
   justify-content: center;
   align-items: center;
   padding: 16px;
+  height: 100vh;
 }
 </style>
