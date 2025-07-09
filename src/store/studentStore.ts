@@ -2,7 +2,7 @@ import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import type { ClassDetails } from "@/types/ClassDetailsType";
-import type { Student } from "@/types/students";
+import type { Student } from "@/types/Students";
 import { STUDENTS_API_URL, CLASS_API_URL } from "@/constant";
 import { computed } from "@vue/reactivity";
 

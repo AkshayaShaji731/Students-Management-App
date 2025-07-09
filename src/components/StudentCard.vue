@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import { useStudentStore } from "@/store/studentStore";
-import type { Student } from "@/types/students";
+import type { Student } from "@/types/Students";
 
 const studentStore = useStudentStore();
 
