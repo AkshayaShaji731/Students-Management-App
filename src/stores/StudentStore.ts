@@ -1,8 +1,8 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 
+import { BASE_API_URL } from "@/constants/index";
 import type { ClassDetails } from "@/types/ClassDetailType";
-import { BASE_API_URL } from "@/constants";
 
 export const useStudentStore = defineStore(
   "studentStore",
