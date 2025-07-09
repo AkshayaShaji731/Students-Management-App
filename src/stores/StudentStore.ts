@@ -18,6 +18,7 @@ export const useStudentStore = defineStore(
         console.error("Error fetching job", error);
       }
     };
+
     return { AddClass };
   },
   {
