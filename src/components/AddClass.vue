@@ -14,19 +14,19 @@
       v-model="classForm.totalStudents"
     ></v-text-field>
     <v-container class="d-flex justify-space-between">
-      <v-btn @click="AddClassStore.AddClass(classForm)">Add Student</v-btn>
+      <v-btn @click="addClassStore.AddClass(classForm)">Add Student</v-btn>
       <v-btn>Cancel</v-btn>
     </v-container>
   </v-card>
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive } from "vue";
+import { reactive } from "vue";
 
-import { useStudentStore } from "@/store/StudentStore";
+import { useStudentStore } from "@/stores/StudentStore";
 import type { ClassDetails } from "@/types/ClassDetailType";
 
-const AddClassStore = useStudentStore();
+const addClassStore = useStudentStore();
 
 const classForm = reactive<ClassDetails>({
   classId: "",
