@@ -9,11 +9,11 @@ export const useStudentStore = defineStore(
   () => {
     const AddClass = async (classes: ClassDetails): Promise<void> => {
       try {
-        const res = await axios.post(`${BASE_API_URL}/classes`, classes); 
-          classes.classId = "";
-          classes.className = "";
-          classes.teacherName = "";
-          classes.totalStudents = 0;
+        const res = await axios.post(`${BASE_API_URL}/classes`, classes);
+        classes.classId = "";
+        classes.className = "";
+        classes.teacherName = "";
+        classes.totalStudents = 0;
       } catch (error) {
         console.error("Error fetching job", error);
       }
