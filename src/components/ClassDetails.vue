@@ -1,15 +1,17 @@
 <template>
   <v-tabs-window>
     <v-tabs-window-item
-      v-for="classes in props.classes"
-      :key="classes.className"
-      :value="classes"
+      v-for="classDetails in props.classes"
+      :key="classDetails.className"
+      :value="classDetails"
     >
       <v-card>
-        <v-card-text>Class ID : {{ classes.classId }}</v-card-text>
-        <v-card-text>Class Name : {{ classes.className }}</v-card-text>
-        <v-card-text>Teacher Name : {{ classes.teacherName }}</v-card-text>
-        <v-card-text>Total Students : {{ classes.totalStudents }}</v-card-text>
+        <v-card-text>Class ID : {{ classDetails.classId }}</v-card-text>
+        <v-card-text>Class Name : {{ classDetails.className }}</v-card-text>
+        <v-card-text>Teacher Name : {{ classDetails.teacherName }}</v-card-text>
+        <v-card-text
+          >Total Students : {{ classDetails.totalStudents }}</v-card-text
+        >
       </v-card>
     </v-tabs-window-item>
   </v-tabs-window>
@@ -18,7 +20,6 @@
 <script setup lang="ts">
 const props = defineProps({
   classes: {
-    required: true,
     type: Object,
   },
 });
