@@ -1,6 +1,6 @@
 <template>
   <h1 class="add-student-heading">
-    <add-student />
+    <AddStudent />
   </h1>
 </template>
 
