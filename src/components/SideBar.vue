@@ -21,7 +21,7 @@
 import { RouterLink } from "vue-router";
 import { VIcon } from "vuetify/components";
 
-import { ROUTE_LIST } from "@/constant";
+import { ROUTE_LIST } from "@/constants";
 </script>
 
 <style scoped>

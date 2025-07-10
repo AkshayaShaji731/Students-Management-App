@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 
-import { useStudentStore } from "@/store/studentStore";
+import { useStudentStore } from "@/stores/studentStore";
 import StudentCard from "@/components/StudentCard.vue";
 
 const studentStore = useStudentStore();
