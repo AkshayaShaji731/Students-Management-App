@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 
 import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
-import { BASE_API_URL } from "@/constant";
+import { BASE_API_URL } from "@/constants";
 
 export const useStudentStore = defineStore(
   "studentStore",
