@@ -95,4 +95,28 @@ npm install @mdi/font -D
         },
       },
     })
+### install json server
+
+```
+
+npm insatll -g json server
+
+```
+
+### watch the file
+
+```
+
+json-server -w <path of json>
+
+```
+
+### install axios
+
+```
+
+npm install axios
+
+```
+
 ```
