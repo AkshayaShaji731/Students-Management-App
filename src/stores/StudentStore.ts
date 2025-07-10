@@ -26,6 +26,7 @@ export const useStudentStore = defineStore(
         classes.teacherName = "";
         classes.totalStudents = 0;
       } catch (error) {
+        // TODO:console remove after implement the toast
         console.error("Error fetching job", error);
       }
     };
