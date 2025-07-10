@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-import { useStudentStore } from "@/store/studentStore";
+import { useStudentStore } from "@/stores/StudentStore";
 
 import ClassDetails from "@/components/ClassDetails.vue";
 

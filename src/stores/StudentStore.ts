@@ -1,0 +1,87 @@
+import axios from "axios";
+import { defineStore } from "pinia";
+import { ref } from "vue";
+
+import type { ClassDetails } from "@/types/ClassDetailType";
+import type { Student } from "@/types/Students";
+import { BASE_API_URL } from "@/constants";
+
+export const useStudentStore = defineStore(
+  "studentStore",
+  () => {
+    const classes = ref<ClassDetails[]>([]);
+    const students = ref<Student[]>([]);
+
+    const updateClasses = (upadateClass: ClassDetails[]) =>
+      (classes.value = upadateClass);
+
+    const updateStudents = (updatedStudents: Student[]) =>
+      (students.value = updatedStudents);
+
+    const addClass = async (classes: ClassDetails): Promise<void> => {
+      try {
+        const res = await axios.post(`${BASE_API_URL}/classes`, classes);
+        classes.classId = "";
+        classes.className = "";
+        classes.teacherName = "";
+        classes.totalStudents = 0;
+      } catch (error) {
+        // TODO:console remove after implement the toast
+        console.error("Error fetching job", error);
+      }
+    };
+
+    const fetchClasses = async () => {
+      try {
+        const response = await axios.get(`${BASE_API_URL}/classes`);
+        const data = response.data;
+
+        return data;
+      } catch (error) {
+        console.error("Error fetching jobs", error);
+      }
+    };
+
+    const fetchStudentDetails = async () => {
+      try {
+        const response = await axios.get(`${BASE_API_URL}/students`);
+        const data = response.data;
+
+        return data;
+      } catch (error) {
+        console.error("Error fetching jobs", error);
+      }
+    };
+
+    const getClassName = (classId: string) => {
+      const classInfo = classes.value.find(
+        (cl: ClassDetails) => cl.classId === classId
+      );
+
+      return classInfo ? classInfo.className : "-";
+    };
+
+    const getClassTeacher = (classId: string) => {
+      const classInfo = classes.value.find(
+        (cl: ClassDetails) => cl.classId === classId
+      );
+
+      return classInfo ? classInfo.teacherName : "-";
+    };
+
+    return {
+      addClass,
+      classes,
+      fetchClasses,
+      fetchStudentDetails,
+      getClassName,
+      getClassTeacher,
+      students,
+      updateClasses,
+      updateStudents,
+    };
+  },
+  {
+    persist: true,
+  }
+);
