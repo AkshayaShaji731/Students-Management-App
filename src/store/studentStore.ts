@@ -1,10 +1,10 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
+
 import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
 import { STUDENTS_API_URL, CLASS_API_URL } from "@/constant";
-import { computed } from "@vue/reactivity";
 
 export const useStudentStore = defineStore(
   "studentStore",
@@ -17,24 +17,6 @@ export const useStudentStore = defineStore(
 
     const updateStudents = (updatedStudents: Student[]) =>
       (students.value = updatedStudents);
-
-    const getClassName = computed(() => {
-      return (classId: string) => {
-        const classInfo = classes.value.find(
-          (cl: ClassDetails) => cl.classId === classId
-        );
-        return classInfo ? classInfo.className : "Unknown Class";
-      };
-    });
-
-    const getClassTeacher = computed(() => {
-      return (classId: string) => {
-        const classInfo = classes.value.find(
-          (cl: ClassDetails) => cl.classId === classId
-        );
-        return classInfo ? classInfo.teacherName : "Unknown Class";
-      };
-    });
 
     const fetchClasses = async () => {
       try {
@@ -58,13 +40,29 @@ export const useStudentStore = defineStore(
       }
     };
 
+    const getClassName = (classId: string) => {
+      const classInfo = classes.value.find(
+        (cl: ClassDetails) => cl.classId === classId
+      );
+
+      return classInfo ? classInfo.className : "-";
+    };
+
+    const getClassTeacher = (classId: string) => {
+      const classInfo = classes.value.find(
+        (cl: ClassDetails) => cl.classId === classId
+      );
+      
+      return classInfo ? classInfo.teacherName : "-";
+    };
+
     return {
       classes,
-      students,
-      getClassName,
-      getClassTeacher,
       fetchClasses,
       fetchStudentDetails,
+      getClassName,
+      getClassTeacher,
+      students,
       updateClasses,
       updateStudents,
     };
