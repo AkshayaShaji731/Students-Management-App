@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 
-import { useStudentStore } from "@/stores/studentStore";
+import { useStudentStore } from "@/stores/StudentStore";
 import type { ClassDetails } from "@/types/ClassDetailsType";
 
 const addClassStore = useStudentStore();
