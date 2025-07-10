@@ -12,26 +12,12 @@
         v-model="studentForm.classId"
       ></v-select>
       <v-label class="pb-6">Enter the Marks of Subjects</v-label>
-      <v-text-field
-        label="English"
-        v-model="studentForm.marks[0].mark"
-      ></v-text-field>
-      <v-text-field
-        label="Maths"
-        v-model="studentForm.marks[1].mark"
-      ></v-text-field>
-      <v-text-field
-        label="Physics"
-        v-model="studentForm.marks[2].mark"
-      ></v-text-field>
-      <v-text-field
-        label="Chemistry"
-        v-model="studentForm.marks[3].mark"
-      ></v-text-field>
-      <v-text-field
-        label="Computer"
-        v-model="studentForm.marks[4].mark"
-      ></v-text-field>
+      <v-container v-for="mark in studentForm.marks">
+        <v-text-field
+          :label="`${mark.subject}`"
+          v-model="mark.mark"
+        ></v-text-field>
+      </v-container>
       <v-btn type="submit" color="primary">Submit</v-btn>
     </v-form>
   </v-container>
