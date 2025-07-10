@@ -4,7 +4,7 @@ import { ref } from "vue";
 
 import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
-import { STUDENTS_API_URL, CLASS_API_URL } from "@/constant";
+import { BASE_API_URL } from "@/constant";
 
 export const useStudentStore = defineStore(
   "studentStore",
@@ -20,7 +20,7 @@ export const useStudentStore = defineStore(
 
     const fetchClasses = async () => {
       try {
-        const response = await axios.get(CLASS_API_URL);
+        const response = await axios.get(`${BASE_API_URL}/classes`);
         const data = response.data;
 
         return data;
@@ -31,7 +31,7 @@ export const useStudentStore = defineStore(
 
     const fetchStudentDetails = async () => {
       try {
-        const response = await axios.get(STUDENTS_API_URL);
+        const response = await axios.get(`${BASE_API_URL}/students`);
         const data = response.data;
 
         return data;
@@ -52,7 +52,7 @@ export const useStudentStore = defineStore(
       const classInfo = classes.value.find(
         (cl: ClassDetails) => cl.classId === classId
       );
-      
+
       return classInfo ? classInfo.teacherName : "-";
     };
 

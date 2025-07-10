@@ -17,5 +17,4 @@ export const ROUTE_LIST: Route[] = [
     title: "Students",
   },
 ];
-export const STUDENTS_API_URL = "http://localhost:3000/students";
-export const CLASS_API_URL = "http://localhost:3000/classes";
+export const BASE_API_URL = "http://localhost:3000";
