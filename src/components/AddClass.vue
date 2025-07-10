@@ -1,20 +1,11 @@
 <template>
   <v-card class="pa-5 h-screen position-absolute top-0 right-0 w-25">
-    <v-text-field label="Class ID" v-model="classForm.classId"></v-text-field>
-    <v-text-field
-      label="Class Name"
-      v-model="classForm.className"
-    ></v-text-field>
-    <v-text-field
-      label="Teacher Name"
-      v-model="classForm.teacherName"
-    ></v-text-field>
-    <v-text-field
-      label="Total Students"
-      v-model="classForm.totalStudents"
-    ></v-text-field>
+    <v-text-field label="Class ID" v-model="classForm.classId" />
+    <v-text-field label="Class Name" v-model="classForm.className" />
+    <v-text-field label="Teacher Name" v-model="classForm.teacherName" />
+    <v-text-field label="Total Students" v-model="classForm.totalStudents" />
     <v-container class="d-flex justify-space-between">
-      <v-btn @click="addClassStore.addClass(classForm)">Add Student</v-btn>
+      <v-btn @click="addClassStore.addClass(classForm)">Add Class</v-btn>
       <v-btn>Cancel</v-btn>
     </v-container>
   </v-card>
