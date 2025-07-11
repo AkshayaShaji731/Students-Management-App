@@ -16,5 +16,10 @@ export const ROUTE_LIST: Route[] = [
     icon: "mdi-account",
     title: "Students",
   },
+  {
+    path: "/add-student",
+    icon: "mdi-plus",
+    title: "Add Student",
+  },
 ];
 export const BASE_API_URL = "http://localhost:3000";
