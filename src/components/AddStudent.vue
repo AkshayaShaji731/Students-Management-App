@@ -26,7 +26,7 @@
 <script lang="ts" setup>
 import { reactive, onMounted, ref, computed } from "vue";
 
-import { useStudentStore } from "@/stores/studentStore";
+import { useStudentStore } from "@/stores/StudentStore";
 
 import type { Student } from "@/types/Students";
 import type { ClassDetails } from "@/types/ClassDetailsType";
