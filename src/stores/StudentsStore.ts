@@ -26,15 +26,11 @@ export const useStudentStore = defineStore(
     const addStudent = async (student: Student) => {
       try {
         const response = await axios.post(`${BASE_API_URL}/students`, student);
+        students.value.push(response.data);
       } catch (error) {
         console.error("Error fetching jobs", error);
       }
     };
-
-    const latestId = computed(() => {
-      const id = Number(students[students.length - 1].id);
-      return String(id + 1);
-    });
 
     return { addStudent, fetchStudentDetails, students, updateStudents };
   },
