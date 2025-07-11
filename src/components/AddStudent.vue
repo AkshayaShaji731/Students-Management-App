@@ -28,8 +28,9 @@ import { reactive, onMounted, ref, computed } from "vue";
 
 import { useStudentStore } from "@/stores/StudentStore";
 
-import type { Student } from "@/types/Students";
 import type { ClassDetails } from "@/types/ClassDetailsType";
+import type { Student } from "@/types/Students";
+import { MARKS } from "@/constants";
 
 const studentStore = useStudentStore();
 const length = studentStore.students.length - 1;
@@ -44,28 +45,7 @@ const studentId = ref(String(latestId.value + 1));
 const studentForm = reactive<Student>({
   name: "",
   id: studentId.value,
-  marks: [
-    {
-      subject: "English",
-      mark: 0,
-    },
-    {
-      subject: "Maths",
-      mark: 0,
-    },
-    {
-      subject: "Physics",
-      mark: 0,
-    },
-    {
-      subject: "Chemistry",
-      mark: 0,
-    },
-    {
-      subject: "Computer",
-      mark: 0,
-    },
-  ],
+  marks:MARKS,
   classId: "",
 });
 
