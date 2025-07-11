@@ -1,5 +1,5 @@
 <template>
-  <h1 class="add-student-heading">Add Students</h1>
+  <h1 class="add-student-heading">Add Student</h1>
 </template>
 
 <script lang="ts" setup></script>
@@ -13,5 +13,7 @@
   justify-content: center;
   align-items: center;
   padding: 16px;
+  height: 100vh;
+  margin-left: 100px;
 }
 </style>
