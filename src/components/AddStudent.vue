@@ -5,7 +5,7 @@
       <v-text-field label="Student ID" v-model="studentForm.id" readonly />
       <v-select
         label="Class ID"
-        :items="classIds"
+        :items="classId"
         v-model="studentForm.classId"
       />
       <v-label class="pb-6">Enter the Marks of Subjects</v-label>
@@ -26,16 +26,21 @@
 <script lang="ts" setup>
 import { reactive, onMounted, ref, computed } from "vue";
 
-import { useStudentStore } from "@/stores/StudentsStore";
+import { useStudentStore } from "@/stores/studentStore";
 
 import type { Student } from "@/types/Students";
+import type { ClassDetails } from "@/types/ClassDetailsType";
 
 const studentStore = useStudentStore();
-const classIds: string[] = ["class A", "class B", "C"];
 const length = studentStore.students.length - 1;
-const latestId = computed(() => Number(studentStore.students[length].id));
 
+const classId = studentStore.classes.map(
+  (classDetails: ClassDetails) => classDetails.classId
+);
+
+const latestId = computed(() => Number(studentStore.students[length].id));
 const studentId = ref(String(latestId.value + 1));
+
 const studentForm = reactive<Student>({
   name: "",
   id: studentId.value,
@@ -67,6 +72,8 @@ const studentForm = reactive<Student>({
 onMounted(async () => {
   const students = await studentStore.fetchStudentDetails();
   studentStore.updateStudents(students);
+  const classes = await studentStore.fetchClasses();
+  studentStore.updateClasses(classes);
 });
 </script>
 
