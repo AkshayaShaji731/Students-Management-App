@@ -2,7 +2,7 @@ import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-import type { ClassDetails } from "@/types/ClassDetailType";
+import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
 import { BASE_API_URL } from "@/constants";
 
@@ -40,7 +40,6 @@ export const useStudentStore = defineStore(
         console.error("Error fetching jobs", error);
       }
     };
-
     const fetchClasses = async () => {
       try {
         const response = await axios.get(`${BASE_API_URL}/classes`);
