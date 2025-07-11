@@ -40,7 +40,6 @@ export const useStudentStore = defineStore(
         console.error("Error fetching jobs", error);
       }
     };
-
     const fetchClasses = async () => {
       try {
         const response = await axios.get(`${BASE_API_URL}/classes`);
