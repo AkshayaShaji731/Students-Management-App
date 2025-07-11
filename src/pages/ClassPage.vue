@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <section class="class-page-container">
     <v-card class="pa-4" permanent>
       <v-card-title class="text-h5 font-weight-bold">Classes</v-card-title>
@@ -31,12 +30,6 @@ onMounted(async () => {
   classStore.updateClasses(classes);
 });
 </script>
-=======
-  <section class="class-page-container"></section>
-</template>
-
-<script setup lang="ts"></script>
->>>>>>> 96b4677 (rm studentsStores,added addstudent to Studentstore,classIds render from store)
 
 <style scoped>
 .class-page-container {
