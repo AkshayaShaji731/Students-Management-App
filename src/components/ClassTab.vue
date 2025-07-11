@@ -1,11 +1,13 @@
 <template>
   <v-card class="pa-4" permanent>
-    <v-title class="text-h5 font-weight-bold">Classes</v-title>
+    <v-card-title class="text-h5 font-weight-bold">Classes</v-card-title>
     <v-tabs>
       <v-tab
-        v-for="className in classNames"
+        v-if="props.classes"
+        v-for="className in props.classes.className"
         :key="className"
         :text="className"
+        :value="className"
       ></v-tab>
     </v-tabs>
     <slot></slot>
@@ -13,8 +15,20 @@
 </template>
 
 <script lang="ts" setup>
-// Todo:ClassNames added from store
-const classNames: string[] = ["Class A", "Class B", "Class C"];
+import type { ClassDetails } from "@/types/ClassDetailsType";
+
+interface Props {
+  classes: ClassDetails;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  classes: () => ({
+    classId: "",
+    className: "",
+    teacherName: "",
+    totalStudents: 0,
+  }),
+});
 </script>
 
 <style scoped>

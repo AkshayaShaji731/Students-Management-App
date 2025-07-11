@@ -1,6 +1,6 @@
+import { ref } from "vue";
 import axios from "axios";
 import { defineStore } from "pinia";
-import { ref } from "vue";
 
 import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
