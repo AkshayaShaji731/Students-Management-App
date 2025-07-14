@@ -1,10 +1,9 @@
 import { ref } from "vue";
-import axios from "axios";
 import { defineStore } from "pinia";
 
 import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
-import { BASE_API_URL } from "@/constants";
+import api from "@/api/api";
 
 export const useStudentStore = defineStore(
   "studentStore",
@@ -20,7 +19,7 @@ export const useStudentStore = defineStore(
 
     const addClass = async (classData: ClassDetails): Promise<void> => {
       try {
-        const res = await axios.post(`${BASE_API_URL}/classes`, classData);
+        const res = await api.post(`/classes`, classData);
         classData.classId = "";
         classData.className = "";
         classData.teacherName = "";
@@ -42,7 +41,7 @@ export const useStudentStore = defineStore(
     };
     const fetchClasses = async () => {
       try {
-        const response = await axios.get(`${BASE_API_URL}/classes`);
+        const response = await api.get(`/classes`);
         const data = response.data;
 
         return data;
@@ -53,7 +52,7 @@ export const useStudentStore = defineStore(
 
     const fetchStudentDetails = async () => {
       try {
-        const response = await axios.get(`${BASE_API_URL}/students`);
+        const response = await api.get(`/students`);
         const data = response.data;
 
         return data;
