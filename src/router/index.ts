@@ -28,6 +28,11 @@ const router = createRouter({
       name: "add-student",
       component: AddStudentPage,
     },
+    {
+      path: "/class/:id",
+      name: "classtab",
+      component: ClassPage,
+    },
   ],
 });
 

@@ -5,10 +5,12 @@
   >
     <v-card-text>Student Name : {{ props.studentDetails.name }} </v-card-text>
     <v-card-text>Student ID : {{ props.studentDetails.id }}</v-card-text>
-    <v-card-text
-      >Class Name :
-      {{ studentStore.getClassName(props.studentDetails.classId) }}
-    </v-card-text>
+    <RouterLink :to="`/class/${props.studentDetails.classId}`">
+      <v-card-text class="text-white"
+        >Class Name :
+        {{ studentStore.getClassName(props.studentDetails.classId) }}
+      </v-card-text>
+    </RouterLink>
     <v-card-text
       >Class Teacher :
       {{ studentStore.getClassTeacher(props.studentDetails.classId) }}
@@ -34,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import { RouterLink } from "vue-router";
 import { useStudentStore } from "@/stores/StudentStore";
 import type { Student } from "@/types/Students";
 
