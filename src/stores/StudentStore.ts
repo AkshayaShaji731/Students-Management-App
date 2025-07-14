@@ -18,13 +18,13 @@ export const useStudentStore = defineStore(
     const updateStudents = (updatedStudents: Student[]) =>
       (students.value = updatedStudents);
 
-    const addClass = async (classes: ClassDetails): Promise<void> => {
+    const addClass = async (classData: ClassDetails): Promise<void> => {
       try {
-        const res = await axios.post(`${BASE_API_URL}/classes`, classes);
-        classes.classId = "";
-        classes.className = "";
-        classes.teacherName = "";
-        classes.totalStudents = 0;
+        const res = await axios.post(`${BASE_API_URL}/classes`, classData);
+        classData.classId = "";
+        classData.className = "";
+        classData.teacherName = "";
+        classData.totalStudents = 0;
       } catch (error) {
         // TODO:console remove after implement the toast
         console.error("Error fetching job", error);
