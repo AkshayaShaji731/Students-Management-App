@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 
 import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
-import { BASE_API_URL } from "@/constant";
+import { BASE_API_URL } from "@/constants";
 
 export const useStudentStore = defineStore(
   "studentStore",
@@ -17,6 +17,19 @@ export const useStudentStore = defineStore(
 
     const updateStudents = (updatedStudents: Student[]) =>
       (students.value = updatedStudents);
+
+    const addClass = async (classData: ClassDetails): Promise<void> => {
+      try {
+        const res = await axios.post(`${BASE_API_URL}/classes`, classData);
+        classData.classId = "";
+        classData.className = "";
+        classData.teacherName = "";
+        classData.totalStudents = 0;
+      } catch (error) {
+        // TODO:console remove after implement the toast
+        console.error("Error fetching job", error);
+      }
+    };
 
     const fetchClasses = async () => {
       try {
@@ -57,6 +70,7 @@ export const useStudentStore = defineStore(
     };
 
     return {
+      addClass,
       classes,
       fetchClasses,
       fetchStudentDetails,
