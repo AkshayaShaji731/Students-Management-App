@@ -35,19 +35,16 @@ onMounted(async () => {
 .student-page__container
   margin-left: 100px
 
-
 .student-page__heading
   background-color: #341539
   color: #fff
   padding: 50px 10px 10px
-
 
 .student-page__content
   display: grid
   grid-template-columns: repeat(1, 1fr)
   background-color: #341539
   padding: 20px 10px
-
 
 @media (min-width: 1024px)
   .student-page__content
