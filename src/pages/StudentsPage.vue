@@ -1,11 +1,11 @@
 <template>
-  <section class="student-page-container">
-    <div class="student-page-heading">
+  <section class="student-page__container">
+    <div class="student-page__heading">
       <h2 class="d-flex align-center justify-center font-weight-bold">
         STUDENT DETAILS
       </h2>
     </div>
-    <div class="student-page-content">
+    <div class="student-page__content">
       <StudentCard
         v-for="student in studentStore.students"
         :key="student.id"
@@ -31,27 +31,25 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
-.student-page-container {
-  margin-left: 100px;
-}
+<style scoped lang="sass">
+.student-page__container
+  margin-left: 100px
 
-.student-page-heading {
-  background-color: #341539;
-  color: #fff;
-  padding: 50px 10px 10px;
-}
 
-.student-page-content {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  background-color: #341539;
-  padding: 20px 10px;
-}
+.student-page__heading
+  background-color: #341539
+  color: #fff
+  padding: 50px 10px 10px
 
-@media screen and (min-width: 1024px) {
-  .student-page-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
+.student-page__content
+  display: grid
+  grid-template-columns: repeat(1, 1fr)
+  background-color: #341539
+  padding: 20px 10px
+
+
+@media (min-width: 1024px)
+  .student-page__content
+    grid-template-columns: repeat(2, 1fr)
 </style>
