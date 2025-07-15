@@ -12,6 +12,10 @@
       </v-tabs>
       <ClassDetails v-model="tab" :classes="classStore.classes" />
     </v-card>
+    <v-btn class="position-absolute top-0 right-0 ma-4" @click="handleAddForm()"
+      >Add class</v-btn
+    >
+    <AddClass :add-class-active="addClassActive" @close="handleAddForm()" />
   </section>
 </template>
 
@@ -22,12 +26,18 @@ import { useRoute } from "vue-router";
 import { useStudentStore } from "@/stores/StudentStore";
 
 import ClassDetails from "@/components/ClassDetails.vue";
+import AddClass from "@/components/AddClass.vue";
 
 const tab = ref<null | number>(null);
+const addClassActive = ref(false);
 const classStore = useStudentStore();
 
 const route = useRoute();
 const classId = route.params.id as string;
+
+const handleAddForm = () => {
+  addClassActive.value = !addClassActive.value;
+};
 
 onMounted(async () => {
   const classes = await classStore.fetchClasses();
@@ -45,6 +55,7 @@ onMounted(async () => {
 <style scoped>
 .class-page-container {
   margin-left: 100px;
+  position: relative;
 }
 
 .v-card :deep() {
