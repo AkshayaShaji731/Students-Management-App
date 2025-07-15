@@ -68,7 +68,7 @@ const classForm = reactive<ClassDetails>({
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .v-form :deep() {
     width: 25%;
   }
