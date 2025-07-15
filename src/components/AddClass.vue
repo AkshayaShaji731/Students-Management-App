@@ -30,6 +30,7 @@ const emit = defineEmits(["close"]);
 const handleCancel = () => {
   emit("close");
 };
+
 const classForm = reactive<ClassDetails>({
   classId: "",
   className: "",
@@ -55,6 +56,7 @@ const classForm = reactive<ClassDetails>({
   .v-container :deep() {
     flex-direction: row;
   }
+
   .v-form :deep() {
     width: 75%;
   }
