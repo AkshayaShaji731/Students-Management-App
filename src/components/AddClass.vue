@@ -3,14 +3,10 @@
     class="pa-5 h-screen position-absolute top-0 right-0 w-25"
     v-if="props.addClassActive"
   >
+    <v-label class="text-h5 pa-2 font-weight-bold">Create New class</v-label>
     <v-text-field label="Class ID" v-model="classForm.classId" />
     <v-text-field label="Class Name" v-model="classForm.className" />
     <v-text-field label="Teacher Name" v-model="classForm.teacherName" />
-    <v-text-field
-      label="Total Students"
-      v-model="classForm.totalStudents"
-      readonly
-    />
     <v-container class="d-flex justify-space-between">
       <v-btn @click="addClassStore.addClass(classForm)">Add Class</v-btn>
       <v-btn @click="handleCancel()">Cancel</v-btn>
@@ -44,7 +40,8 @@ const classForm = reactive<ClassDetails>({
 
 <style scoped>
 .v-form :deep() {
-  background-color: #341539;
+  background-color: #330238;
   color: #fff;
+  border: 1px solid #2b0c2e;
 }
 </style>
