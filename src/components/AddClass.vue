@@ -1,7 +1,7 @@
 <template>
   <v-form
     class="pa-5 h-screen position-absolute top-0 right-0"
-    v-if="props.isAddClassActive"
+    v-if="isAddClassActive"
   >
     <v-label class="text-h5 pa-2 font-weight-bold">Create New class</v-label>
     <v-text-field label="Class ID" v-model="classForm.classId" />
@@ -22,7 +22,7 @@ import type { ClassDetails } from "@/types/ClassDetailsType";
 
 const addClassStore = useStudentStore();
 
-const props = defineProps({
+defineProps({
   isAddClassActive: Boolean,
 });
 
