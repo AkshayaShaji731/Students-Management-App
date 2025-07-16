@@ -1,14 +1,14 @@
 <template>
   <v-form
     class="pa-5 h-screen position-absolute top-0 right-0"
-    v-if="props.addClassActive"
+    v-if="props.isAddClassActive"
   >
     <v-label class="text-h5 pa-2 font-weight-bold">Create New class</v-label>
     <v-text-field label="Class ID" v-model="classForm.classId" />
     <v-text-field label="Class Name" v-model="classForm.className" />
     <v-text-field label="Teacher Name" v-model="classForm.teacherName" />
     <v-container>
-      <v-btn @click="addClassStore.addClass(classForm)">Add Class</v-btn>
+      <v-btn @click="addClass()">Add Class</v-btn>
       <v-btn @click="handleCancel()">Cancel</v-btn>
     </v-container>
   </v-form>
@@ -23,7 +23,7 @@ import type { ClassDetails } from "@/types/ClassDetailsType";
 const addClassStore = useStudentStore();
 
 const props = defineProps({
-  addClassActive: Boolean,
+  isAddClassActive: Boolean,
 });
 
 const emit = defineEmits(["close"]);
@@ -37,6 +37,11 @@ const classForm = reactive<ClassDetails>({
   teacherName: "",
   totalStudents: 0,
 });
+
+const addClass = () => {
+  addClassStore.addClass(classForm);
+  handleCancel();
+};
 </script>
 
 <style scoped>
