@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { computed, onMounted } from "vue";
 
 import { useRoute } from "vue-router";
 
@@ -25,16 +25,19 @@ import { useStudentStore } from "@/stores/StudentStore";
 import StudentCard from "@/components/StudentCard.vue";
 
 const studentStore = useStudentStore();
-const students = ref(studentStore.students);
 
 const route = useRoute();
 const classId = route.params.id as string;
 
-if (classId != undefined) {
-  students.value = studentStore.students.filter(
-    (student) => student.classId === classId
-  );
-}
+const students = computed(() => {
+  if (classId != undefined) {
+    return studentStore.students.filter(
+      (student) => student.classId === classId
+    );
+  }
+  return studentStore.students;
+});
+console.log(students);
 
 onMounted(async () => {
   const students = await studentStore.fetchStudentDetails();
