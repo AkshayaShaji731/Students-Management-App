@@ -5,12 +5,17 @@
   >
     <v-card-text>Student Name : {{ props.studentDetails.name }} </v-card-text>
     <v-card-text>Student ID : {{ props.studentDetails.id }}</v-card-text>
-    <RouterLink :to="`/class/${props.studentDetails.classId}`">
-      <v-card-text class="text-white"
-        >Class Name :
+
+    <v-card-text
+      >Class Name :
+      <RouterLink
+        :to="`/class/${props.studentDetails.classId}`"
+        class="text-white :hover-blue"
+      >
         {{ studentStore.getClassName(props.studentDetails.classId) }}
-      </v-card-text>
-    </RouterLink>
+      </RouterLink>
+    </v-card-text>
+
     <v-card-text
       >Class Teacher :
       {{ studentStore.getClassTeacher(props.studentDetails.classId) }}
