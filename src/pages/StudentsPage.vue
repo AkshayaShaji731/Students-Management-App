@@ -30,14 +30,14 @@ const route = useRoute();
 const classId = route.params.id as string;
 
 const students = computed(() => {
-  if (classId != undefined) {
+  if (classId) {
     return studentStore.students.filter(
       (student) => student.classId === classId
     );
   }
+
   return studentStore.students;
 });
-console.log(students);
 
 onMounted(async () => {
   const students = await studentStore.fetchStudentDetails();
