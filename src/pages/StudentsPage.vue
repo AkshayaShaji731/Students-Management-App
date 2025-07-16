@@ -27,7 +27,7 @@ import StudentCard from "@/components/StudentCard.vue";
 const studentStore = useStudentStore();
 
 const route = useRoute();
-const classId = route.params.id as string;
+const classId = route.query.classId as string;
 
 const students = computed(() => {
   if (classId) {

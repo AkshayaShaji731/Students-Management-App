@@ -24,8 +24,9 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const handleTotalStudentsCountClick = (classId: string) => {
-  router.push(`/students/${classId}`);
+  router.push({ name: "students", query: { classId } });
 };
+
 const props = defineProps({
   classes: {
     type: Object,
