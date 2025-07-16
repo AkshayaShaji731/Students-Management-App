@@ -9,7 +9,8 @@
         <v-card-text>Class ID : {{ classDetails.classId }}</v-card-text>
         <v-card-text>Class Name : {{ classDetails.className }}</v-card-text>
         <v-card-text>Teacher Name : {{ classDetails.teacherName }}</v-card-text>
-        <v-card-text @click="toClassPage(classDetails.classId)"
+        <v-card-text
+          @click="handleTotalStudentsCountClick(classDetails.classId)"
           >Total Students : {{ classDetails.totalStudents }}
         </v-card-text>
       </v-card>
@@ -22,7 +23,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const toClassPage = (classId: string) => {
+const handleTotalStudentsCountClick = (classId: string) => {
   router.push(`/students/${classId}`);
 };
 const props = defineProps({
