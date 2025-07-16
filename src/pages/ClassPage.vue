@@ -25,8 +25,8 @@ import { useRoute } from "vue-router";
 
 import { useStudentStore } from "@/stores/StudentStore";
 
-import ClassDetails from "@/components/ClassDetails.vue";
 import AddClass from "@/components/AddClass.vue";
+import ClassDetails from "@/components/ClassDetails.vue";
 
 const tab = ref<null | number>(null);
 const addClassActive = ref(false);
