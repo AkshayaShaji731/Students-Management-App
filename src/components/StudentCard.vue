@@ -34,14 +34,10 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
 import { useStudentStore } from "@/stores/StudentStore";
 import type { Student } from "@/types/Students";
 
 const studentStore = useStudentStore();
-const route = useRoute();
-const classStudents = route.params.id as string;
-console.log(classStudents);
 
 interface Props {
   studentDetails?: Student;
