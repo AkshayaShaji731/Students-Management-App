@@ -10,7 +10,12 @@
         <v-card-text>Class Name : {{ classDetails.className }}</v-card-text>
         <v-card-text>Teacher Name : {{ classDetails.teacherName }}</v-card-text>
         <v-card-text
-          >Total Students : {{ classDetails.totalStudents }}</v-card-text
+          >Total Students :
+          <RouterLink
+            :to="`/students/${classDetails.classId}`"
+            class="text-white"
+            >{{ classDetails.totalStudents }}</RouterLink
+          ></v-card-text
         >
       </v-card>
     </v-tabs-window-item>
@@ -18,6 +23,8 @@
 </template>
 
 <script setup lang="ts">
+import { RouterLink } from "vue-router";
+
 const props = defineProps({
   classes: {
     type: Object,
