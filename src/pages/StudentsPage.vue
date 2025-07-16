@@ -17,9 +17,11 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+
 import { useRoute } from "vue-router";
 
 import { useStudentStore } from "@/stores/StudentStore";
+
 import StudentCard from "@/components/StudentCard.vue";
 
 const studentStore = useStudentStore();

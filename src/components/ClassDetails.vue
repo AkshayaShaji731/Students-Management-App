@@ -9,22 +9,22 @@
         <v-card-text>Class ID : {{ classDetails.classId }}</v-card-text>
         <v-card-text>Class Name : {{ classDetails.className }}</v-card-text>
         <v-card-text>Teacher Name : {{ classDetails.teacherName }}</v-card-text>
-        <v-card-text
-          >Total Students :
-          <RouterLink
-            :to="`/students/${classDetails.classId}`"
-            class="text-white"
-            >{{ classDetails.totalStudents }}</RouterLink
-          ></v-card-text
-        >
+        <v-card-text @click="toClassPage(classDetails.classId)"
+          >Total Students : {{ classDetails.totalStudents }}
+        </v-card-text>
       </v-card>
     </v-tabs-window-item>
   </v-tabs-window>
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
+
+const toClassPage = (classId: string) => {
+  router.push(`/students/${classId}`);
+};
 const props = defineProps({
   classes: {
     type: Object,
