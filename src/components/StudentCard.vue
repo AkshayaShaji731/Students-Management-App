@@ -15,7 +15,6 @@
         {{ studentStore.getClassName(props.studentDetails.classId) }}
       </RouterLink>
     </v-card-text>
-
     <v-card-text
       >Class Teacher :
       {{ studentStore.getClassTeacher(props.studentDetails.classId) }}
