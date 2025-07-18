@@ -58,7 +58,7 @@ onMounted(async () => {
 </script>
 
 <style scoped lang="sass">
-.v-container :deep()
+:deep.v-container
   background-color: #343434
   color: #fff
 </style>

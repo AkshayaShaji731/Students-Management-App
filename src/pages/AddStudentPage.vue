@@ -1,5 +1,5 @@
 <template>
-  <h1 class="add-student-heading">
+  <h1 class="add-student__heading">
     <AddStudent />
   </h1>
 </template>
@@ -17,4 +17,6 @@ import AddStudent from "@/components/AddStudent.vue";
   justify-content: center
   align-items: center
   padding: 16px
+  margin-left:100px
+  height:100vh
 </style>

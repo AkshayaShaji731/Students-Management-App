@@ -32,7 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="sass">
-.v-card :deep()
+:deep.v-card
   background-color: #341539
   color: #fff
   border-radius: 0

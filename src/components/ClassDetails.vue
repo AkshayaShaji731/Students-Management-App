@@ -26,12 +26,12 @@ const props = defineProps({
 </script>
 
 <style scoped lang="sass">
-.v-card :deep()
+:deep(.v-card)
   background-color: #663399
   margin-block: 50px
   padding: 50px
 
-.v-card-text :deep()
+:deep(.v-card-text)
   color: #fff
   font-weight: bold
   font-size: 20px

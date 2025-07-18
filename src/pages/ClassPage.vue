@@ -35,9 +35,10 @@ onMounted(async () => {
 .class-page__container 
   margin-left: 100px
 
-.v-card :deep() 
+:deep.v-card
   background-color: #341539
   color: #fff
   border-radius: 0
   height: 100vh
+
 </style>

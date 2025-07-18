@@ -25,7 +25,7 @@ import { ROUTE_LIST } from "@/constants";
 </script>
 
 <style scoped lang="sass">
-.v-navigation-drawer:deep()
+:deep.v-navigation-drawer
   background-color: #490648
   color: #fff
   width: auto

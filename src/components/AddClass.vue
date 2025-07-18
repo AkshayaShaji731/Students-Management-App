@@ -32,7 +32,7 @@ const classForm = reactive<ClassDetails>({
 </script>
 
 <style scoped lang="sass">
-.v-form :deep()
+:deep.v-form
   background-color: #341539
   color: #fff
 </style>
