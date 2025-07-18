@@ -29,17 +29,16 @@ const classStore = useStudentStore();
 const route = useRoute();
 const classId = route.params.id as string;
 
-const classTab: number = classStore.classes.findIndex(
-  (classDetails) => classDetails.classId === classId
-);
-
-if (classTab >= 0) {
-  tab.value = classTab;
-}
-
 onMounted(async () => {
   const classes = await classStore.fetchClasses();
   classStore.updateClasses(classes);
+  const classTab: number = classStore.classes.findIndex(
+    (classDetails) => classDetails.classId === classId
+  );
+
+  if (classTab >= 0) {
+    tab.value = classTab;
+  }
 });
 </script>
 
