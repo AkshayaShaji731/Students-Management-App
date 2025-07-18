@@ -5,7 +5,7 @@
   >
     <v-card-text>Student Name : {{ props.studentDetails.name }} </v-card-text>
     <v-card-text>Student ID : {{ props.studentDetails.id }}</v-card-text>
-    <v-card-text @click="demo()"
+    <v-card-text
       >Class Name :
       {{ studentStore.getClassName(props.studentDetails.classId) }}
     </v-card-text>
@@ -38,10 +38,6 @@ import { useStudentStore } from "@/stores/StudentStore";
 import type { Student } from "@/types/Students";
 
 const studentStore = useStudentStore();
-
-const demo=()=>{
-  console.log("hii")
-}
 
 interface Props {
   studentDetails?: Student;

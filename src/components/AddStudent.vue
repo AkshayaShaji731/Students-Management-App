@@ -35,8 +35,8 @@ import { MARKS } from "@/constants";
 const studentStore = useStudentStore();
 const length = studentStore.students.length - 1;
 
-const classId = studentStore.classes.map(
-  (classDetails: ClassDetails) => classDetails.classId
+const classId = computed(() =>
+  studentStore.classes.map((classDetails: ClassDetails) => classDetails.classId)
 );
 
 const latestId = computed(() => Number(studentStore.students[length].id));
@@ -45,7 +45,7 @@ const studentId = ref(String(latestId.value + 1));
 const studentForm = reactive<Student>({
   name: "",
   id: studentId.value,
-  marks:MARKS,
+  marks: MARKS,
   classId: "",
 });
 
