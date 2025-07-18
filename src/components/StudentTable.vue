@@ -27,5 +27,3 @@ defineProps({
   students: Object,
 });
 </script>
-
-<style scoped></style>
