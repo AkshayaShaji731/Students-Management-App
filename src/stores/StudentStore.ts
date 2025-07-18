@@ -28,7 +28,7 @@ export const useStudentStore = defineStore(
 
     const addStudent = async (student: Student): Promise<void> => {
       try {
-        const response = await axios.post(`${BASE_API_URL}/students`, student);
+        const response = await api.post(`/students`, student);
         students.value.push(response.data);
       } catch (error) {
         // TODO:console remove after implement the toast
