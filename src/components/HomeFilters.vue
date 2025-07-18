@@ -33,12 +33,8 @@ const filterDataName = ref<string | number>("");
 const filterDataSubject = ref<string>("");
 const filterDataClass = ref<string[]>([]);
 
-interface Emits {
-  (e: "filters", value: Filters): void;
-}
-
 defineProps<ClassName>();
-const emit = defineEmits<Emits>();
+const emit = defineEmits<{ (e: "filters", value: Filters): void }>();
 
 watch(
   [filterDataName, filterDataSubject, filterDataClass],
