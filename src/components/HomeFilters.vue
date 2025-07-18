@@ -16,8 +16,8 @@
     <v-select
       v-model="filterDataClass"
       label="Filter With Class name"
-      :items="className"
       class="text-white"
+      :items="className"
       multiple
     />
   </v-container>
@@ -29,6 +29,10 @@ import { watch, ref } from "vue";
 const filterDataName = ref<string | number>("");
 const filterDataSubject = ref<string>("");
 const filterDataClass = ref<string[]>([]);
+
+defineProps({
+  className: Array,
+});
 
 const emit = defineEmits(["filters"]);
 
@@ -42,10 +46,6 @@ watch(
     });
   }
 );
-
-defineProps({
-  className: Array,
-});
 </script>
 
 <style scoped></style>
