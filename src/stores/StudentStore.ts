@@ -1,10 +1,9 @@
 import { ref } from "vue";
-import axios from "axios";
 import { defineStore } from "pinia";
 
 import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
-import { BASE_API_URL } from "@/constants";
+import api from "@/api/axios.js";
 
 export const useStudentStore = defineStore(
   "studentStore",
@@ -20,11 +19,7 @@ export const useStudentStore = defineStore(
 
     const addClass = async (classData: ClassDetails): Promise<void> => {
       try {
-        const res = await axios.post(`${BASE_API_URL}/classes`, classData);
-        classData.classId = "";
-        classData.className = "";
-        classData.teacherName = "";
-        classData.totalStudents = 0;
+        const res = await api.post(`/classes`, classData);
       } catch (error) {
         // TODO:console remove after implement the toast
         console.error("Error fetching job", error);
@@ -33,7 +28,7 @@ export const useStudentStore = defineStore(
 
     const addStudent = async (student: Student): Promise<void> => {
       try {
-        const response = await axios.post(`${BASE_API_URL}/students`, student);
+        const response = await api.post(`/students`, student);
         students.value.push(response.data);
       } catch (error) {
         // TODO:console remove after implement the toast
@@ -42,7 +37,7 @@ export const useStudentStore = defineStore(
     };
     const fetchClasses = async () => {
       try {
-        const response = await axios.get(`${BASE_API_URL}/classes`);
+        const response = await api.get(`/classes`);
         const data = response.data;
 
         return data;
@@ -53,7 +48,7 @@ export const useStudentStore = defineStore(
 
     const fetchStudentDetails = async () => {
       try {
-        const response = await axios.get(`${BASE_API_URL}/students`);
+        const response = await api.get(`/students`);
         const data = response.data;
 
         return data;
