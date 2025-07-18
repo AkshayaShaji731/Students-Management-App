@@ -17,17 +17,28 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
 
 import { useStudentStore } from "@/stores/StudentStore";
 
 import ClassDetails from "@/components/ClassDetails.vue";
 
-const tab = ref(null);
+const tab = ref<null | number>(null);
 const classStore = useStudentStore();
+
+const route = useRoute();
+const classId = route.params.id as string;
 
 onMounted(async () => {
   const classes = await classStore.fetchClasses();
   classStore.updateClasses(classes);
+  const classTab: number = classStore.classes.findIndex(
+    (classDetails) => classDetails.classId === classId
+  );
+
+  if (classTab >= 0) {
+    tab.value = classTab;
+  }
 });
 </script>
 
