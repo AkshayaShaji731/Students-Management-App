@@ -20,10 +20,6 @@ export const useStudentStore = defineStore(
     const addClass = async (classData: ClassDetails): Promise<void> => {
       try {
         const res = await api.post(`/classes`, classData);
-        classData.classId = "";
-        classData.className = "";
-        classData.teacherName = "";
-        classData.totalStudents = 0;
       } catch (error) {
         // TODO:console remove after implement the toast
         console.error("Error fetching job", error);
