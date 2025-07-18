@@ -7,7 +7,7 @@
     </div>
     <div class="student-page-content">
       <StudentCard
-        v-for="student in studentStore.students"
+        v-for="student in students"
         :key="student.id"
         :student-details="student"
       />
@@ -16,12 +16,28 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { computed, onMounted } from "vue";
+
+import { useRoute } from "vue-router";
 
 import { useStudentStore } from "@/stores/StudentStore";
+
 import StudentCard from "@/components/StudentCard.vue";
 
 const studentStore = useStudentStore();
+
+const route = useRoute();
+const classId = route.query.classId as string;
+
+const students = computed(() => {
+  if (classId) {
+    return studentStore.students.filter(
+      (student) => student.classId === classId
+    );
+  }
+
+  return studentStore.students;
+});
 
 onMounted(async () => {
   const students = await studentStore.fetchStudentDetails();

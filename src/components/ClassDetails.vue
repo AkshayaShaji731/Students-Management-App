@@ -10,14 +10,23 @@
         <v-card-text>Class Name : {{ classDetails.className }}</v-card-text>
         <v-card-text>Teacher Name : {{ classDetails.teacherName }}</v-card-text>
         <v-card-text
-          >Total Students : {{ classDetails.totalStudents }}</v-card-text
-        >
+          @click="handleTotalStudentsCountClick(classDetails.classId)"
+          >Total Students : {{ classDetails.totalStudents }}
+        </v-card-text>
       </v-card>
     </v-tabs-window-item>
   </v-tabs-window>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const handleTotalStudentsCountClick = (classId: string) => {
+  router.push({ name: "students", query: { classId } });
+};
+
 const props = defineProps({
   classes: {
     type: Object,
