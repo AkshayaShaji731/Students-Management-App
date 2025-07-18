@@ -1,5 +1,5 @@
 <template>
-  <section class="class-page-container">
+  <section class="class-page__container">
     <v-card class="pa-4" permanent>
       <v-card-title class="text-h5 font-weight-bold">Classes</v-card-title>
       <v-tabs v-model="tab">
@@ -42,15 +42,14 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
-.class-page-container {
-  margin-left: 100px;
-}
+<style scoped lang="sass">
+.class-page__container 
+  margin-left: 100px
 
-.v-card :deep() {
-  background-color: #341539;
-  color: #fff;
-  border-radius: 0;
-  height: 100vh;
-}
+:deep.v-card
+  background-color: #341539
+  color: #fff
+  border-radius: 0
+  height: 100vh
+
 </style>

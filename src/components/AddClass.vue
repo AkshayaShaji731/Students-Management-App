@@ -31,9 +31,8 @@ const classForm = reactive<ClassDetails>({
 });
 </script>
 
-<style scoped>
-.v-form :deep() {
-  background-color: #341539;
-  color: #fff;
-}
+<style scoped lang="sass">
+:deep.v-form
+  background-color: #341539
+  color: #fff
 </style>

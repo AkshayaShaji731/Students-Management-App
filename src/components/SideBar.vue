@@ -24,10 +24,9 @@ import { VIcon } from "vuetify/components";
 import { ROUTE_LIST } from "@/constants";
 </script>
 
-<style scoped>
-.v-navigation-drawer:deep() {
-  background-color: #490648;
-  color: #fff;
-  width: auto;
-}
+<style scoped lang="sass">
+:deep.v-navigation-drawer
+  background-color: #490648
+  color: #fff
+  width: auto
 </style>
