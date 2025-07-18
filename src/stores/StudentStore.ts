@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 
 import type { ClassDetails } from "@/types/ClassDetailsType";
 import type { Student } from "@/types/Students";
-import api from "@/api/api";
+import api from "@/api/axios.js";
 
 export const useStudentStore = defineStore(
   "studentStore",
