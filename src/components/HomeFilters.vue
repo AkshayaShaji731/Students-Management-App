@@ -26,15 +26,19 @@
 <script setup lang="ts">
 import { watch, ref } from "vue";
 
+import type { ClassName } from "@/types/ClassName";
+import type { Filters } from "@/types/Filters";
+
 const filterDataName = ref<string | number>("");
 const filterDataSubject = ref<string>("");
 const filterDataClass = ref<string[]>([]);
 
-defineProps({
-  className: Array,
-});
+interface Emits {
+  (e: "filters", value: Filters): void;
+}
 
-const emit = defineEmits(["filters"]);
+defineProps<ClassName>();
+const emit = defineEmits<Emits>();
 
 watch(
   [filterDataName, filterDataSubject, filterDataClass],
@@ -47,5 +51,3 @@ watch(
   }
 );
 </script>
-
-<style scoped></style>
