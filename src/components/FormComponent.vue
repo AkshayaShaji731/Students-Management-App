@@ -55,15 +55,18 @@ defineProps<Texts>();
   .v-btn {
     width: 50%;
   }
+  
   .forget-text {
     right: 25%;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .forget-text {
     right: 28%;
   }
 }
+
 @media screen and (min-width: 1469px) {
   .forget-text {
     right: 30%;
