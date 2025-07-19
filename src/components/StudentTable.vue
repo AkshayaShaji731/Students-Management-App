@@ -5,7 +5,7 @@
         <th v-for="head in tableHeading">{{ head }}</th>
       </tr>
     </thead>
-    <tbody v-for="student in paginatedItems" :key="student.id">
+    <tbody v-for="student in paginatedStudents" :key="student.id">
       <tr>
         <td>{{ student.name }}</td>
         <td>{{ student.id }}</td>
@@ -32,16 +32,16 @@ const props = defineProps<Students>();
 
 const tableHeading = ref<string[]>(["Student Name", "Student ID", "ClassName"]);
 const page = ref(1);
-const pageSize = ref(10);
+const studentsNumber = ref(10);
 const students = ref(props.students);
 
 const totalPages = computed(() => {
-  return Math.ceil(students.value.length / pageSize.value);
+  return Math.ceil(students.value.length / studentsNumber.value);
 });
 
 const paginatedStudents = computed(() => {
-  const start = (page.value - 1) * pageSize.value;
-  const end = start + pageSize.value;
+  const start = (page.value - 1) * studentsNumber.value;
+  const end = start + studentsNumber.value;
   return students.value.slice(start, end);
 });
 </script>
