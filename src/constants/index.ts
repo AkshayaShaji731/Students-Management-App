@@ -1,3 +1,4 @@
+import type { FormText } from "@/types/FormText";
 import type { Mark } from "@/types/Marks";
 import type { Route } from "@/types/Route";
 
@@ -45,5 +46,16 @@ export const MARKS: Mark[] = [
   {
     subject: "Computer",
     mark: 0,
+  },
+];
+
+export const FORM_TEXT: FormText[] = [
+  {
+    title: "Sign In to Student Management App",
+    btnText: "SignIn",
+  },
+  {
+    title: "Sign Up to Student Management App",
+    btnText: "SignUp",
   },
 ];
