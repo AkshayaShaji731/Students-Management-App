@@ -18,3 +18,9 @@ export const ROUTE_LIST: Route[] = [
   },
 ];
 export const BASE_API_URL = "http://localhost:3000";
+
+export const tableHeading: string[] = [
+  "Student Name",
+  "Student ID",
+  "ClassName",
+];

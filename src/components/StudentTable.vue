@@ -20,7 +20,9 @@
 import { ref, computed } from "vue";
 
 import { useStudentStore } from "@/stores/StudentStore";
+
 import type { Student } from "@/types/Students";
+import { tableHeading } from "@/constants";
 
 const studentStore = useStudentStore();
 
@@ -30,7 +32,6 @@ interface Students {
 
 const props = defineProps<Students>();
 
-const tableHeading = ref<string[]>(["Student Name", "Student ID", "ClassName"]);
 const page = ref(1);
 const studentsNumber = ref(10);
 const students = ref(props.students);
