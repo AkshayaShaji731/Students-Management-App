@@ -1,3 +1,4 @@
+import type { FormText } from "@/types/FormText";
 import type { Mark } from "@/types/Marks";
 import type { Route } from "@/types/Route";
 
@@ -48,7 +49,7 @@ export const MARKS: Mark[] = [
   },
 ];
 
-export const SIGN_TAB_NAMES = [
+export const SIGN_TAB_NAMES: FormText[] = [
   {
     title: "SignIn to Student Management App",
     btnText: "SignIn",

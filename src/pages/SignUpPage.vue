@@ -13,6 +13,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+
 import { SIGN_TAB_NAMES } from "@/constants";
 
 const tab = ref(null);
