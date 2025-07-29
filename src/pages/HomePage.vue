@@ -8,6 +8,6 @@
 
 <style scoped>
 .home-page-container {
-  margin-left: 130px;
+  margin-left: 100px;
 }
 </style>
