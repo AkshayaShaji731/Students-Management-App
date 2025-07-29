@@ -47,3 +47,14 @@ export const MARKS: Mark[] = [
     mark: 0,
   },
 ];
+
+export const SIGN_TAB_NAMES = [
+  {
+    title: "SignIn to Student Management App",
+    btnText: "SignIn",
+  },
+  {
+    title: "SignUp to Student Management App",
+    btnText: "SignUp",
+  },
+];
